@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Library</title>
+    </head>
+
+    <body>
+        <div id="main">
+
+            <div>
+                <h1>The Odin Project: Library</h1>
+            </div>
+            
+            <form id="bookForm">
+                Title: <input type="text" id="bookTitle" autocomplete="off"> <br>
+                Author: <input type="text" id="bookAuthor" autocomplete="off"> <br>
+                Pages: <input type="text" id="bookPages" autocomplete="off"> <br>
+
+                <p>Have you read this book?</p>
+                <input type="radio" name="bookRead" value="yes"> Yes <br>
+                <input type="radio" name="bookRead" value="no"> No <br>
+
+                <input type="button" id="bookSubmit" value="Add Book">
+            </form>
+
+
+            <div id="library">
+
+                <div>
+                    <h2> Books in your Library</h2>
+                </div>
+
+                <div id="bookShelf">
+
+                    <div class="column">
+                        <div class="card">
+                            <h3> Harry Potter and the Philosopher's Stone</h3>
+                            <p> J.K. Rowling </p>
+                            <p> 309 pages </p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <h3> A Dance with Dragons</h3>
+                            <p> George R.R. Martin </p>
+                            <p> 1016 pages </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="library.js"></script>
+    </body>
+</html>
