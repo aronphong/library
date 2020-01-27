@@ -64,7 +64,11 @@ function addBookToLibrary() {
             if (bookRead[0].checked) {
                 readStatus = bookRead[0].value;
             }
-
+        
+        if (bookName == "" || bookAuthor == "" || bookRead == "") {
+            return alert("Please fill out the book fully!");
+        }
+        
         const newBook = new Book(bookName, bookAuthor, bookPages);
 
         myLibrary.push(newBook);
