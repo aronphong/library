@@ -8,7 +8,7 @@ function Book(title, author, pages) {
     // the constructor
     this.title = title,
     this.author = author,
-    this.pages = pages
+    this.pages = pages + " pages"
 }
 
 Book.prototype.info = function () {
@@ -77,3 +77,10 @@ function addBookToLibrary() {
 
 addBookToLibrary();
 
+function openForm() {
+    document.getElementById("bookForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("bookForm").style.display = "none";
+  }

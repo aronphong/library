@@ -13,18 +13,29 @@
                 <h1>The Odin Project: Library</h1>
             </div>
             
-            <form id="bookForm">
-                Title: <input type="text" id="bookTitle" autocomplete="off"> <br>
-                Author: <input type="text" id="bookAuthor" autocomplete="off"> <br>
-                Pages: <input type="text" id="bookPages" autocomplete="off"> <br>
+            <button class="open-button" onclick="openForm()">Add Book</button>
 
-                <p>Have you read this book?</p>
-                <input type="radio" name="bookRead" value="yes"> Yes <br>
-                <input type="radio" name="bookRead" value="no"> No <br>
+            <div class="form-popup" id="bookForm">
+                <form class="form-container" >
 
-                <input type="button" id="bookSubmit" value="Add Book">
-            </form>
+                    <h1>Enter Book Information </h1>
 
+                    <label for="bookTitle"><b>Book Title</b></label>
+                    <input type="text" id="bookTitle" autocomplete="off" required>
+                    <label for="bookAuthor"><b>Author</b></label>
+                    <input type="text" id="bookAuthor" autocomplete="off" required>
+                    <label for="bookPages"><b>Book Pages</b></label>
+                    <input type="text" id="bookPages" autocomplete="off" required>
+
+                    <label for="bookRead"><b>Have you read this book?</b></label>
+                    <br>
+                    <input type="radio" name="bookRead" value="yes"> Yes <br>
+                    <input type="radio" name="bookRead" value="no"> No <br>
+                    <br>
+                    <input type="button" id="bookSubmit" value="Add Book" class="btn">
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
 
             <div id="library">
 
@@ -47,6 +58,14 @@
                             <h3> A Dance with Dragons</h3>
                             <p> George R.R. Martin </p>
                             <p> 1016 pages </p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <h3> A Farewell to Arms</h3>
+                            <p> Ernest Hemingway </p>
+                            <p> 300 pages </p>
                         </div>
                     </div>
 
