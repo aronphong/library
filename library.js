@@ -32,6 +32,14 @@ function addBookToLibrary() {
 
         for (let i = 0; i < myLibrary.length; i++) {
 
+            let a, b = "";
+            if (myLibrary[i].read == 'yes') {
+                a = "selected";
+            }
+            else {
+                b = "selected";
+            } 
+
             let newBookItemColumn = document.createElement("div");
             newBookItemColumn.className = "column";
 
@@ -47,11 +55,16 @@ function addBookToLibrary() {
             let bookPagesItem = document.createElement("p");
             bookPagesItem.innerText = myLibrary[i].pages;
 
+            let bookReadStatus = document.createElement("select");
+            bookReadStatus.innerHTML = `<option ${a}>` + "yes" +"</option>" + 
+                                       `<option ${b}>` + "no" + "</option>";
+
             newBookItemCard.appendChild(bookTitleItem)
             newBookItemCard.appendChild(bookAuthorItem);
             newBookItemCard.appendChild(bookPagesItem);
-
+            newBookItemCard.appendChild(bookReadStatus);
             newBookItemColumn.appendChild(newBookItemCard);
+
             bookShelf.appendChild(newBookItemColumn);
         }    
     }
@@ -64,16 +77,17 @@ function addBookToLibrary() {
         let bookRead = document.getElementsByName("bookRead");
             let readStatus = "no";
             if (bookRead[0].checked) {
-                readStatus = bookRead[0].value;
+                readStatus = "yes";
             }
         
-        if (bookName == "" || bookAuthor == "" || bookRead == "") {
+        if (bookName == "" || bookAuthor == "" || bookPages == "") {
             return alert("Please fill out the book fully!");
         }
-        
-        const newBook = new Book(bookName, bookAuthor, bookPages);
+
+        const newBook = new Book(bookName, bookAuthor, bookPages, readStatus);
 
         myLibrary.push(newBook);
+        closeForm();
         displayBooks(myLibrary);
     }
 
