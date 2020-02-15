@@ -4,20 +4,22 @@ let render = function (template, node) {
     node.innerHTML = template;
 }
 
-function Book(title, author, pages) {
-    // the constructor
-    this.title = title,
-    this.author = author,
-    this.pages = pages + " pages"
+class Book {
+    constructor(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages + " pages";
+    }
+
+    info() {
+        return this.title + this.author + this.pages;
+    }
+
+    dis() {
+        return [this.title, this.author, this.pages];
+    }
 }
 
-Book.prototype.info = function () {
-    return this.title + this.author + this.pages;
-}
-
-Book.prototype.dis = function () {
-    return [this.title, this.author, this.pages];
-}
 
 function addBookToLibrary() {
 
